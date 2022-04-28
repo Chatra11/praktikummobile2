@@ -1,6 +1,5 @@
 package com.example.modul4.ui.hewanudara
 
-import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.modul4.R
@@ -15,32 +14,33 @@ class HewanudaraViewModel : ViewModel() {
         udaraMutableLiveData.value = udaraArrayList
     }
     fun udaralist(){
-        var hudara = HewanUdara("Burung Bangau",R.drawable.bangau)
+        var hudara = HewanUdara(R.string.udara1,R.drawable.bangau)
         udaraArrayList = ArrayList()
         udaraArrayList!!.add(hudara)
-        hudara = HewanUdara("burung Beo",R.drawable.burung_beo)
+        hudara = HewanUdara(R.string.udara2,R.drawable.burung_beo)
         udaraArrayList!!.add(hudara)
-        hudara = HewanUdara("Burung Kolibri",R.drawable.burung_kolibri)
+        hudara = HewanUdara(R.string.udara3,R.drawable.burung_kolibri)
         udaraArrayList!!.add(hudara)
-        hudara = HewanUdara("burung Kutilang",R.drawable.burung_kutilang)
+        hudara = HewanUdara(R.string.udara4,R.drawable.burung_kutilang)
         udaraArrayList!!.add(hudara)
-        hudara = HewanUdara("Cendrawasih",R.drawable.cendrawasih)
+        hudara = HewanUdara(R.string.udara5,R.drawable.cendrawasih)
         udaraArrayList!!.add(hudara)
-        hudara = HewanUdara("Elang Jawa",R.drawable.elangjawa)
+        hudara = HewanUdara(R.string.udara6,R.drawable.elangjawa)
         udaraArrayList!!.add(hudara)
-        hudara = HewanUdara("Kelelawar",R.drawable.kelelawar)
+        hudara = HewanUdara(R.string.udara7,R.drawable.kelelawar)
         udaraArrayList!!.add(hudara)
-        hudara = HewanUdara("Lalat",R.drawable.lalat)
+        hudara = HewanUdara(R.string.udara8,R.drawable.lalat)
         udaraArrayList!!.add(hudara)
-        hudara = HewanUdara("Lebah",R.drawable.lebah)
+        hudara = HewanUdara(R.string.udara9,R.drawable.lebah)
         udaraArrayList!!.add(hudara)
-        hudara = HewanUdara("Burung Hantu",R.drawable.singapuar)
+        hudara = HewanUdara(R.string.udara10,R.drawable.singapuar)
         udaraArrayList!!.add(hudara)
     }
     init {
         init()
     }
-    fun udaradata(hewanUdara: HewanUdara,context: Context){
+    fun udaradata(hewanUdara: HewanUdara,context: HewanudaraFragment){
         udaraArrayList
     }
+
 }

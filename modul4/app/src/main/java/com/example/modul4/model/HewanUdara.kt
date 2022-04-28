@@ -5,6 +5,6 @@ import androidx.annotation.StringRes
 import java.io.Serializable
 
 data class HewanUdara (
-    val namaudara : String,
+    @StringRes val namaudara : Int,
     @DrawableRes val gambarudara : Int,
-):Serializable
+)

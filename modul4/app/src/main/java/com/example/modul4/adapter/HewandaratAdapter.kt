@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.modul4.R
 import com.example.modul4.model.HewanDarat
@@ -13,7 +14,7 @@ import com.example.modul4.ui.hewandarat.HewanDaratViewModel
 import com.example.modul4.ui.hewandarat.HewandaratFragment
 
 class HewandaratAdapter(
-    private val context: HewandaratFragment,
+    private val context: Context,
     private val daratArrayList: List<HewanDarat>
 ): RecyclerView.Adapter<HewandaratAdapter.ItemViewHolder>() {
     private val viewModel = HewanDaratViewModel()
@@ -31,8 +32,11 @@ class HewandaratAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = daratArrayList[position]
-        holder.NamaHewantextView.text= item.namadarat
+        holder.NamaHewantextView.text= context?.resources.getString(item.namadarat)
         holder.imagedarat.setImageResource(item.gambardarat)
+        holder.view.setOnClickListener {
+            Toast.makeText(context, "Anda Menglik item no. ${position+1}", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int {

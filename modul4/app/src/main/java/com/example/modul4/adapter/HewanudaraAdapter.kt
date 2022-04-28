@@ -1,5 +1,6 @@
 package com.example.modul4.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +16,7 @@ import com.google.android.material.internal.ContextUtils.getActivity
 
 
 class HewanudaraAdapter(
-    private val context: HewanudaraFragment,
+    private val context: Context,
     private val udaraArrayList: List<HewanUdara>
 ): RecyclerView.Adapter<HewanudaraAdapter.ItemViewHolder>() {
     private val viewModel = HewanudaraViewModel()
@@ -28,27 +29,22 @@ class HewanudaraAdapter(
     }
 
 
-    class ItemViewHolder(val view: View, listener: onItemClickListener): RecyclerView.ViewHolder(view) {
+    class ItemViewHolder(val view: View, ): RecyclerView.ViewHolder(view) {
         val NamaHewantextView: TextView = view.findViewById(R.id.namahewanudara)
         val imageudara: ImageView = view.findViewById(R.id.gambarudara)
 
-        init {
-            itemView.setOnClickListener{
-                listener.onItemclick(adapterPosition)
-            }
-        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder{
         val adapterUdaraLayout = LayoutInflater.from(parent.context).inflate(R.layout.list_udara,parent,false)
-        return ItemViewHolder(adapterUdaraLayout,mylistener)
+        return ItemViewHolder(adapterUdaraLayout)
     }
     override fun getItemCount(): Int {
         return udaraArrayList.size
     }
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int){
         val item = udaraArrayList[position]
-        holder.NamaHewantextView.text = item.namaudara
+        holder.NamaHewantextView.text = context?.resources.getString(item.namaudara)
         holder.imageudara.setImageResource(item.gambarudara)
 //        holder.view.setOnClickListener {
 //                val view: View
@@ -57,4 +53,3 @@ class HewanudaraAdapter(
     }
 
 }
-

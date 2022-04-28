@@ -4,19 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.modul4.R
 import com.example.modul4.adapter.HewanudaraAdapter
 import com.example.modul4.databinding.FragmentHewanairBinding
 import com.example.modul4.databinding.FragmentHewanudaraBinding
 import com.example.modul4.model.HewanUdara
 
 
-class HewanudaraFragment : Fragment(){
+class HewanudaraFragment : Fragment(R.layout.fragment_hewanudara){
     private lateinit var recyclerView: RecyclerView
+    private lateinit var newarrayudara: ArrayList<HewanUdara>
     var recyclerViewudaraadapter: HewanudaraAdapter? = null
     private var _binding: FragmentHewanudaraBinding? = null
     // This property is only valid between onCreateView and
@@ -34,6 +37,7 @@ class HewanudaraFragment : Fragment(){
         _binding = FragmentHewanudaraBinding.inflate(inflater, container, false)
         val root: View = binding.root
         recyclerView = _binding!!.recylerViewUdara
+
         return root
     }
 
@@ -43,7 +47,7 @@ class HewanudaraFragment : Fragment(){
     }
     var udaraListUpdateObserver : Observer<ArrayList<HewanUdara>?> =
         Observer<ArrayList<HewanUdara>?> { udaraArrayList ->
-            recyclerViewudaraadapter = HewanudaraAdapter(this,udaraArrayList)
+            recyclerViewudaraadapter = HewanudaraAdapter(requireContext(),udaraArrayList)
             recyclerView!!.layoutManager = LinearLayoutManager(context)
             recyclerView!!.adapter = recyclerViewudaraadapter
         }

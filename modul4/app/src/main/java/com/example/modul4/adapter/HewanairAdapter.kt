@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.example.modul4.R
 import com.example.modul4.model.HewanAir
 import com.example.modul4.ui.hewanair.HewanairFragment
 
 class HewanairAdapter(
-    private val context: HewanairFragment,
+    private val context: Context,
     private val airArrayList: ArrayList<HewanAir>
 ):RecyclerView.Adapter<HewanairAdapter.ItemViewHolder>() {
     class ItemViewHolder(val view: View):RecyclerView.ViewHolder(view){
@@ -28,8 +30,11 @@ class HewanairAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = airArrayList[position]
-        holder.namaHewanAirtextView.text = item.namaAir
+        holder.namaHewanAirtextView.text = context?.resources.getString(item.namaAir)
         holder.gambarhewanAir.setImageResource(item.gambarAir)
+        holder.view.setOnClickListener {
+            Toast.makeText(context, "Anda Mengklik item no. ${position+1}", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int {

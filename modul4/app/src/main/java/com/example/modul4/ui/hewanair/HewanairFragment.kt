@@ -18,7 +18,7 @@ import com.example.modul4.model.HewanAir
 import com.example.modul4.ui.hewanudara.HewanudaraViewModel
 
 
-class HewanairFragment : Fragment() {
+class HewanairFragment : Fragment(R.layout.fragment_hewanair) {
     private lateinit var recyclerView: RecyclerView
     private var _binding: FragmentHewanairBinding? = null
     var recyclerViewairadapter :HewanairAdapter? = null
@@ -48,7 +48,7 @@ class HewanairFragment : Fragment() {
     }
     var airListUpdateObserver : Observer<ArrayList<HewanAir>?> =
         Observer<ArrayList<HewanAir>?> { airArrayList ->
-            recyclerViewairadapter = HewanairAdapter(this,airArrayList)
+            recyclerViewairadapter = HewanairAdapter(requireContext(),airArrayList)
             recyclerView!!.layoutManager = LinearLayoutManager(getContext())
             recyclerView!!.adapter = recyclerViewairadapter
         }

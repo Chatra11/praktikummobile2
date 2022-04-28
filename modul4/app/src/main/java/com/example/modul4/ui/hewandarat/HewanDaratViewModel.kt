@@ -1,6 +1,5 @@
 package com.example.modul4.ui.hewandarat
 
-import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.modul4.R
@@ -16,33 +15,30 @@ class HewanDaratViewModel : ViewModel() {
     }
 
     fun daratlist(){
-        var hdarat = HewanDarat("Badak Jawa",R.drawable.badakjawa)
+        var hdarat = HewanDarat(R.string.darat1,R.drawable.badakjawa)
         daratArrayList = ArrayList()
         daratArrayList!!.add(hdarat)
-        hdarat = HewanDarat("Beruang Kutub",R.drawable.beruangkutub)
+        hdarat = HewanDarat(R.string.darat2,R.drawable.beruangkutub)
         daratArrayList!!.add(hdarat)
-        hdarat = HewanDarat("Gajah",R.drawable.gajah)
+        hdarat = HewanDarat(R.string.darat3,R.drawable.gajah)
         daratArrayList!!.add(hdarat)
-        hdarat = HewanDarat("Harimau Sumatra",R.drawable.harimausumatra)
+        hdarat = HewanDarat(R.string.darat4,R.drawable.harimausumatra)
         daratArrayList!!.add(hdarat)
-        hdarat = HewanDarat("Jerapah",R.drawable.jerapah)
+        hdarat = HewanDarat(R.string.darat5,R.drawable.jerapah)
         daratArrayList!!.add(hdarat)
-        hdarat = HewanDarat("Burung Maleo",R.drawable.maleo)
+        hdarat = HewanDarat(R.string.darat6,R.drawable.maleo)
         daratArrayList!!.add(hdarat)
-        hdarat = HewanDarat("Burung Merak",R.drawable.merak)
+        hdarat = HewanDarat(R.string.darat7,R.drawable.merak)
         daratArrayList!!.add(hdarat)
-        hdarat = HewanDarat("Rusa Moose",R.drawable.mose)
+        hdarat = HewanDarat(R.string.darat8,R.drawable.mose)
         daratArrayList!!.add(hdarat)
-        hdarat = HewanDarat("Musang",R.drawable.musangcongok)
+        hdarat = HewanDarat(R.string.darat9,R.drawable.musangcongok)
         daratArrayList!!.add(hdarat)
-        hdarat = HewanDarat("Singa",R.drawable.singa)
+        hdarat = HewanDarat(R.string.darat10,R.drawable.singa)
         daratArrayList!!.add(hdarat)
     }
     init {
         init()
-    }
-    fun daratdata(hewandarat: HewanDarat,context: Context){
-        daratArrayList
     }
 
 }

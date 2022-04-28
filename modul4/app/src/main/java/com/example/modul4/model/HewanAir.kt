@@ -4,7 +4,7 @@ import androidx.annotation.StringRes
 import androidx.annotation.DrawableRes
 
 data class HewanAir (
-    val namaAir: String,
+    @StringRes val namaAir: Int,
     @DrawableRes val gambarAir : Int,
 )
 

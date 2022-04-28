@@ -10,13 +10,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.modul4.R
 import com.example.modul4.adapter.HewandaratAdapter
 import com.example.modul4.model.HewanDarat
 import com.example.modul4.databinding.FragmentHewandaratBinding
 import com.example.modul4.databinding.FragmentHewanudaraBinding
 import com.example.modul4.ui.hewanudara.HewanudaraViewModel
 
-class HewandaratFragment : Fragment() {
+class HewandaratFragment : Fragment(R.layout.fragment_hewandarat) {
     private lateinit var recyclerView: RecyclerView
     private var _binding: FragmentHewandaratBinding? = null
     // This property is only valid between onCreateView and
@@ -45,7 +46,7 @@ class HewandaratFragment : Fragment() {
     }
     var daratListUpdateObserver : Observer<ArrayList<HewanDarat>?> =
         Observer<ArrayList<HewanDarat>?>{ daratArrayList ->
-            recyclerViewdaratAdapter = HewandaratAdapter(this,daratArrayList)
+            recyclerViewdaratAdapter = HewandaratAdapter(requireContext(),daratArrayList)
             recyclerView!!.layoutManager = LinearLayoutManager(context)
             recyclerView!!.adapter = recyclerViewdaratAdapter
         }

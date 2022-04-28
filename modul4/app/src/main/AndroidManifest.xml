@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Modul4">
         <activity
+            android:name=".detail"
+            android:exported="false" />
+        <activity
             android:name=".MainactivityHewan"
             android:exported="false" />
         <activity
