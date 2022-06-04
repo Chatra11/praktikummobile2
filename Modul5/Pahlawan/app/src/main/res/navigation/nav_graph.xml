@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/PahlawanListFragment">
+
+    <fragment
+        android:id="@+id/PahlawanListFragment"
+        android:name="com.example.pahlawan.ui.PahlawanListFragment"
+        android:label="PahlawanListFragment" >
+        <action
+            android:id="@+id/action_PahlawanListFragment_to_PahlawanDetailFragment"
+            app:destination="@id/PahlawanDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/PahlawanDetailFragment"
+        android:name="com.example.pahlawan.ui.PahlawanDetailFragment"
+        android:label="PahlawanDetailFragment" >
+        <action
+            android:id="@+id/action_PahlawanDetailFragment_to_PahlawanListFragment"
+            app:destination="@id/PahlawanListFragment" />
+    </fragment>
+</navigation>
